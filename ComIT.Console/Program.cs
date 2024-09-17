@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComIT.Console;
+using System;
 //CLASE 1 VS
 
 //string nombre = "Juanchi";
@@ -178,74 +179,165 @@
 
 //PRACTICA
 // 3)
-int o1 = 9;
-int o2 = 7;
-if (o1 == o2)
-{
-    Console.WriteLine($"{o1} y {o2} son iguales");
-}else if (o1 < o2)
-{
-    Console.WriteLine($"{o1} y {o2} son distintos y {o1} es menor a {o2}");
-}
-else
-{
-    Console.WriteLine($"{o1} y {o2} son distintos y {o1} es mayor a {o2}");
-}
+//int o1 = 9;
+//int o2 = 7;
+//if (o1 == o2)
+//{
+//    //console.writeline($"{o1} y {o2} son iguales");
+//}else if (o1 < o2)
+//{
+//    //console.writeline($"{o1} y {o2} son distintos y {o1} es menor a {o2}");
+//}
+//else
+//{
+//    //console.writeline($"{o1} y {o2} son distintos y {o1} es mayor a {o2}");
+//}
 
-Console.WriteLine("--------------------------------------------------------------------");
+////console.writeline("--------------------------------------------------------------------");
 
-// 4)
-short n4 = 5;
-string textToShow = string.Empty;
+//// 4)
+//short n4 = 5;
+//string texttoshow = string.empty;
 
-switch (n4)
-{
-    case 1:
-    case 2:
-    case 3:
-        textToShow = "Intervalo del 1 al 3";
-        break;
-    case 4:
-    case 5:
-    case 6:
-        textToShow = "Intervalo del 4 al 6";
-        break;
-    case 7:
-    case 8:
-    case 9:
-    case 10:
-        textToShow = "Intervalo del 7 al 10";
-        break;
-    default:
-        textToShow = "El número no está en el rango de 1 a 10.";
-        break;
-}
-Console.WriteLine(textToShow);
-Console.WriteLine("--------------------------------------------------------------------");
+//switch (n4)
+//{
+//    case 1:
+//    case 2:
+//    case 3:
+//        texttoshow = "intervalo del 1 al 3";
+//        break;
+//    case 4:
+//    case 5:
+//    case 6:
+//        texttoshow = "intervalo del 4 al 6";
+//        break;
+//    case 7:
+//    case 8:
+//    case 9:
+//    case 10:
+//        texttoshow = "intervalo del 7 al 10";
+//        break;
+//    default:
+//        texttoshow = "el número no está en el rango de 1 a 10.";
+//        break;
+//}
+////console.writeline(texttoshow);
+////console.writeline("--------------------------------------------------------------------");
 
-// 5)
-int suma = 0;
-int i = 0;
+//// 5)
+//int suma = 0;
+//int i = 0;
 
-do
-{
-    suma += i;
-    i++;
-} while (i <= 10);
-Console.WriteLine($"El resultado de la sumatoria de los primeros 10 es: {suma}" );
+//do
+//{
+//    suma += i;
+//    i++;
+//} while (i <= 10);
+////console.writeline($"el resultado de la sumatoria de los primeros 10 es: {suma}" );
 
-Console.WriteLine("--------------------------------------------------------------------");
+////console.writeline("--------------------------------------------------------------------");
 
-// 6) 
-int[] myArray = [1, 6, 8, 3, 5, 8, 3, 5, 9, 4];
-int producto = 1;
+//// 6) 
+//int[] myarray = [1, 6, 8, 3, 5, 8, 3, 5, 9, 4];
+//int producto = 1;
 
-foreach(int numero in myArray)
-{
-    producto *= numero;
-}
+//foreach(int numero in myarray)
+//{
+//    producto *= numero;
+//}
 
-Console.WriteLine($"El resultsado de multiplicar los numero de mi array es: {producto}");
+////console.writeline($"el resultsado de multiplicar los numero de mi array es: {producto}");
 
+
+////clase 5
+
+//int sumar(int num1, int num2)
+//{
+//    return num1+num2;
+//}
+
+//console.writeline(sumar(10,15));
+
+//void escribirtexto(string texto)
+//{
+//    console.writeline(texto);
+//}
+
+//escribirtexto("hola a todos");
+
+
+//int? dividir (int num1, int num2)
+//{
+//    if (num2 == 0)
+//    {
+//        console.writeline("no se puede dividir por 0");
+//        return null;
+//    }else
+//    {
+//        return (num1 / num2);
+//    }
+
+//}
+
+//int? resultado = dividir(10, 5);
+
+//escribirtexto($"la division de 10 y 5 es: {resultado}");
+//escribirtexto($"la division de 10 y 0 es: {dividir(10, 0)}");
+
+//string concatenar (string tex1, string tex2)
+//{
+//    return tex1 + tex2;
+//}
+
+////console.writeline(concatenar("juan", "schiavoni"));
+
+//string devolvertiempo(bool soleado)
+//{
+//    if (soleado)
+//    {
+//        return "es un dia soleado";
+//    }else
+//    {
+//        return "es un dia nublado";
+//    }
+//}
+
+//string devolvernombrecompleto(string nombre, string apellido = "")
+//{
+//    return ($"{nombre} {apellido}");
+//}
+
+//console.writeline(devolvernombrecompleto("juan", "schiavoni"));
+//console.writeline(devolvernombrecompleto("juan"));
+
+Vehiculo vwUP = new Vehiculo();
+vwUP.Año = 2018;
+vwUP.Color = "Negro";
+vwUP.VelocidadMaxima = 140;
+vwUP.Encender();
+vwUP.Acelerar();
+vwUP.Acelerar(); 
+vwUP.Acelerar(); 
+vwUP.Acelerar();
+vwUP.Acelerar();
+vwUP.Acelerar(); 
+vwUP.Acelerar();
+vwUP.Acelerar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Frenar();
+vwUP.Apagar();
+
+Vehiculo cronos = new Vehiculo();
+cronos.Año = 2023;
+cronos.Color = "Gris";
+cronos.VelocidadMaxima = 160;
+cronos.Acelerar();
+cronos.Apagar();
 
 
