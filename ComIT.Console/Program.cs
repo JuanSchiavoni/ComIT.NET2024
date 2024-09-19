@@ -310,34 +310,70 @@ using System;
 //console.writeline(devolvernombrecompleto("juan", "schiavoni"));
 //console.writeline(devolvernombrecompleto("juan"));
 
-Vehiculo vwUP = new Vehiculo();
-vwUP.Año = 2018;
-vwUP.Color = "Negro";
-vwUP.VelocidadMaxima = 140;
-vwUP.Encender();
-vwUP.Acelerar();
-vwUP.Acelerar(); 
-vwUP.Acelerar(); 
-vwUP.Acelerar();
-vwUP.Acelerar();
-vwUP.Acelerar(); 
-vwUP.Acelerar();
-vwUP.Acelerar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Frenar();
-vwUP.Apagar();
+//Console.WriteLine("Ejemplo con AUTOS");
 
-Vehiculo cronos = new Vehiculo();
-cronos.Año = 2023;
-cronos.Color = "Gris";
-cronos.VelocidadMaxima = 160;
-cronos.Acelerar();
-cronos.Apagar();
+//Auto vwUP = new Auto();
+//Console.WriteLine($"Cantidad de ruedas: {vwUP.CantidadDeRuedas}");
+//vwUP.Año = 2018;
+//vwUP.Color = "Negro";
+//vwUP.VelocidadMaxima = 140;
+//vwUP.CantidadPuerta = 5;
+//vwUP.Encender();
+//vwUP.Acelerar(20);
+//vwUP.Acelerar(20); 
+//vwUP.Acelerar(20); 
+//vwUP.Acelerar(20);
+//vwUP.Acelerar(20);
+//vwUP.Acelerar(); 
+//vwUP.Acelerar();
+//vwUP.Acelerar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Frenar();
+//vwUP.Apagar();
+
+//Auto cronos = new Auto();
+//Console.WriteLine($"Cantidad de ruedas: {cronos.CantidadDeRuedas}");
+//cronos.Año = 2023;
+//cronos.Color = "Gris";
+//cronos.VelocidadMaxima = 160;
+//cronos.CantidadPuerta = 4;
+//cronos.Encender();
+//cronos.Acelerar();
+//cronos.Apagar();
+
+
+//CLASE 6 
+
+//Auto golf = new Auto();
+//Console.WriteLine($"Cantidad de ruedas: {golf.CantidadDeRuedas}");
+//golf.Año = 2024;
+//golf.Color = "Negro";
+//golf.VelocidadMaxima = 260;
+//golf.CantidadPuerta = 5;
+//golf.Encender();
+//golf.Acelerar(80);
+//golf.Acelerar();
+//golf.Frenar();
+//golf.Apagar();
+
+//Console.WriteLine("Ejemplo con MOTOS");
+
+//Moto vespa = new Moto();
+//Console.WriteLine($"Cantidad de ruedas: {vespa.CantidadDeRuedas}");
+//vespa.Color = "Amarillla";
+//vespa.Año = 2010;
+//vespa.VelocidadMaxima = 80;
+//vespa.Encender();
+//vespa.Acelerar();
+//vespa.Frenar();
+//vespa.Apagar();
+
+
 
 
