@@ -374,6 +374,73 @@ using System;
 //vespa.Frenar();
 //vespa.Apagar();
 
+//TAREA Metodos y POO
 
+//int Sumador(int n1, int n2)
+//{
+//    int suma = 0;
+//    return suma = n1 + n2;
+//}
+
+////Console.WriteLine(Sumador(5, 2));
+
+//string ConcatString (string s1, string s2) 
+//{  
+//    return ($"{s1} {s2}"); 
+//}
+
+////Console.WriteLine(ConcatString("Hola", "mundo!"));
+
+//double Descuento(int cantidad, int precio)
+//{
+//    int total = 0;
+//    total = cantidad * precio;
+//    if (total > 1000)
+//    {
+//        return total - (total * 10) / 100;
+//    }
+//    else
+//    {
+//        return cantidad * precio;
+//    }
+//}
+
+////Console.WriteLine(Descuento(5, 200));
+
+//void Asteriscos(int n)
+//{
+//    for (int i = 0; i < n; i++)
+//    {
+//        Console.Write("*");
+//    }
+//    Console.WriteLine();
+//}
+
+
+
+//Libro libro  = new Libro();
+//libro.titulo = "Martín Fierro";
+//libro.autor = "José Hernández";
+//libro.cantidad = 10;
+//libro.cantidadPrestados = 3;
+
+//Libro libro2 = new Libro();
+//libro2.titulo = "Don Quijote de la Mancha";
+//libro2.autor = "Miguel de Cervantes";
+//libro2.cantidad = 5;
+//libro2.cantidadPrestados = 2;
+
+//libro.MostrarLibros();
+//Asteriscos(70);
+//libro2.MostrarLibros();
+
+//Asteriscos(70);
+
+//libro.Prestar();
+//libro.Prestar();
+
+//libro.Devolver();
+//libro.Devolver();
+//libro.Devolver();
 
 
