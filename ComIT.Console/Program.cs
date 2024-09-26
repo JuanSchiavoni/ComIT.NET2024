@@ -444,3 +444,49 @@ using System;
 //libro.Devolver();
 
 
+//CLASE 7
+
+Profesor profesor1 = new(28987654, "Juan", "Perez", new DateOnly(1980, 5, 1), 25);
+Curso curso1 = new("Aprendiendo .NET", 3, profesor1);
+
+for (int i = 0; i < curso1.CantMaxAlumnos; i++)
+{
+    Console.WriteLine($"Ingrese el alumno {i + 1}");
+    Console.Write("DNI: ");
+    long dni = long.Parse(Console.ReadLine());
+    Console.Write("Nombre: ");
+    string nombre = Console.ReadLine();
+    Console.Write("Apellido: ");
+    string apellido = Console.ReadLine();
+
+    Console.Write("Fecha de nacimiento(dd/mm/aaaa): ");
+    string fecha = Console.ReadLine();
+    DateOnly fechaNac = new DateOnly(int.Parse(fecha.Substring(6, 4)), int.Parse(fecha.Substring(3, 2)), int.Parse(fecha.Substring(0, 2)));
+    
+    Console.Write("Trabaja? (SI/NO): ");
+    bool trabaja = Console.ReadLine() == "SI";
+
+    //Forma larga de hacer lo mismo q abajo
+    //Alumno alumno = new Alumno (dni, nombre, apellido, fechaNac, trabaja);
+    //curso1.Alumnos[0] = alumno;
+
+    curso1.Alumnos[i] = new Alumno(dni, nombre, apellido, fechaNac, trabaja);
+
+    Console.WriteLine("-------------------------------------------------------------------");
+}
+
+//Alumno alumno1 = new(34555871, "Cristian", "Rodriguez", new DateOnly(2001, 10, 12), false);
+//curso1.Alumnos[0] = alumno1;
+
+Console.WriteLine($"Los alumnos del curso {curso1.Nombre} son: ");
+
+for (int i = 0; i < curso1.CantMaxAlumnos; i++ )
+{
+    Console.WriteLine($"Alumno {i+1}: {curso1.Alumnos[i].Nombre} {curso1.Alumnos[i].Apellido}");
+} ;
+
+Curso curso2 = new("Aprendiendo a Cocinar", 10 , profesor1);
+
+
+//CLASE 8
+
