@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace ComIT.Console
 {
-    public class Persona
+    public abstract class Persona
     {
         public long DNI = 0;
         public string Nombre = string.Empty;
         public string Apellido = string.Empty;
         public DateOnly FechaNac = new();
+
+
+        public string NombreCompleto
+        {
+            get
+            {
+                //System.Console.WriteLine("Me estan pidiendo un valor");
+                return ($"{Nombre} {Apellido}");
+            }
+            set
+            {
+                //System.Console.WriteLine("Me guardaron un valor");
+            }
+        }
 
         public Persona(long dni, string nombre, string apellido, DateOnly fechaNac)
         {
@@ -20,5 +34,12 @@ namespace ComIT.Console
             Apellido = apellido;
             FechaNac = fechaNac;
         }
+
+        public virtual string DevolverNombreCompleto()
+        {
+            return ($"{Nombre} {Apellido}");
+        }
+
+        public abstract string Saludo();
     }
 }

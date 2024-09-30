@@ -15,5 +15,15 @@ namespace ComIT.Console
         {
             AñosExp = añosExp;
         }
+
+        public override string DevolverNombreCompleto()
+        {
+            return $"Profesor: {base.DevolverNombreCompleto()}";
+        }
+
+        public override string Saludo()
+        {
+            return "Buenos días alumnos";
+        }
     }
 }

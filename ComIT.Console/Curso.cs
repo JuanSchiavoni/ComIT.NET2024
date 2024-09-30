@@ -11,7 +11,8 @@ namespace ComIT.Console
         public string Nombre = "";
         public int CantMaxAlumnos = 0;
         public Profesor Profesor;
-        public Alumno[] Alumnos;
+        //public Alumno[] Alumnos;
+        public List<Alumno> Alumnos;
 
         public Curso(string nombreCurso, int cantMax, Profesor profe)
         {
@@ -19,7 +20,8 @@ namespace ComIT.Console
             CantMaxAlumnos = cantMax;
             Profesor = profe;
             //Crea una array del tamaño de la cantidad maxima de alumnos
-            Alumnos = new Alumno[CantMaxAlumnos];
+            //Alumnos = new Alumno[CantMaxAlumnos];
+            Alumnos = new List<Alumno>();
         }
     }
 }
