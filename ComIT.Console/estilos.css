@@ -1,0 +1,33 @@
+h1{
+    color: blue;
+}
+
+h2{
+    color:blue;
+    background-color: yellow;
+}
+
+ol li{
+    font-style: italic;
+}
+
+.miTitulo{
+    color: red;
+    font-size: 40px;
+    background-color: blue;
+}
+
+p{
+    font-size: 36px;
+}
+
+.textoVerde{
+    color: #33FFFF;
+    border: solid;
+    padding: 10px 20px 10px 5px;
+    margin: 10px;
+}
+
+table{
+    width: 25%;
+}
