@@ -1,0 +1,41 @@
+﻿@page "/profesor"
+@rendermode InteractiveServer
+
+<h1>Profesor</h1>
+
+<button @onclick="Agregar" type="button" class="btn btn-primary">Agregar profesor</button>
+
+<table class="table table-hover table-striped">
+   <thead>
+        <tr>
+            <th>#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Años de Experiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 1; i <= cantProfes; i++)
+        {
+            <tr>
+                <td>@i</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Cantidad de profesores: @cantProfes</p>
+
+@code {
+    private int cantProfes;
+
+    private void Agregar()
+    {
+        cantProfes++;
+    }
+}

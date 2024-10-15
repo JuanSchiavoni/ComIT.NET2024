@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComIT.Console", "ComIT.Console\ComIT.Console.csproj", "{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComIT.Console", "ComIT.Console\ComIT.Console.csproj", "{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursosApp", "CursosApp\CursosApp.csproj", "{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
