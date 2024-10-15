@@ -1,0 +1,24 @@
+﻿@page "/peliculas"
+
+<h1>Peliculas que ví!</h1>
+
+<h3>Agregar una película</h3>
+
+<div>
+    <label for="nombrePelicula">Nombre de la Pelicula: </label>
+    <input type="text" id="nombrePelicula" name="nombre" />
+</div>
+<br/>
+<div>
+    <label for="calificacion">Calificación (1-5)</label>
+    <input type="number" name="calificacion" value="calificacion" min="1" max="5"/>
+</div>
+<br />
+<button @onclick="AgregarPeli" type="button" class="btn btn-primary">Agregar</button>
+
+@code {
+    private void AgregarPeli()
+    {
+        //sin funcion por ahora
+    }
+}

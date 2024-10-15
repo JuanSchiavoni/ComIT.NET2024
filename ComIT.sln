@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComIT.Console", "ComIT.Console\ComIT.Console.csproj", "{3BAEFC6E-EEF1-44E9-BC08-C7879AD3DCD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursosApp", "CursosApp\CursosApp.csproj", "{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursosApp", "CursosApp\CursosApp.csproj", "{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
