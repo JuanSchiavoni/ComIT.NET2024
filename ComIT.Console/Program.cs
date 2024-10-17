@@ -1,4 +1,5 @@
-﻿using ComIT.Console;
+﻿using ComIT.Comunes.Entities;
+using ComIT.Console;
 using System;
 //CLASE 1 VS
 
@@ -564,9 +565,12 @@ while (true)
     Console.Write("Años de experiencia: ");
     int añosExp = int.Parse(Console.ReadLine());
 
+    Console.Write("Materia que dicta: ");
+    string materia = Console.ReadLine();
+
     Console.WriteLine("-------------------------------------------------------------------");
 
-    Profesor profesor = new Profesor (dni, nombre, apellido, fechaNac, añosExp);
+    Profesor profesor = new Profesor (dni, nombre, apellido, fechaNac, añosExp, materia);
     profesores.Add (profesor);
 }
 

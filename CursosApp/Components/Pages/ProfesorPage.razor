@@ -1,12 +1,12 @@
 ﻿@page "/profesor"
+@using ComIT.Comunes.Entities
 @using ComIT.CursosApp.Entities
 @rendermode InteractiveServer
 
 <h1>Profesor</h1>
 
 <h3>Nuevo profesor</h3>
-<label>
-    DNI
+<label>DNI
     <input type="number" @bind="dni" />
 </label>
 <label>Nombre
@@ -21,6 +21,9 @@
 <label>Años de Experiencia
     <input type="number" @bind="añosExp"/>
 </label>
+<label>Materia
+    <input type="text" @bind="materia" />
+</label>
 
 @if (estamosModificando)
 {
@@ -34,9 +37,11 @@ else
 
 
 <br/>
-@if(error != "")
+@if (error != "")
 {
-    <label style="background-color:red">@error</label>
+    <div class="alert alert-danger" role="alert">
+        <label>@error</label>
+    </div>
 }
 <br />
 <table class="table table-hover table-striped">
@@ -47,6 +52,7 @@ else
             <th>Apellido</th>
             <th>Fecha de Nacimiento</th>
             <th>Años de Experiencia</th>
+            <th>Materia</th>
             <th></th>
         </tr>
     </thead>
@@ -60,6 +66,7 @@ else
                 <td>@item.Apellido</td>
                 <td>@item.FechaNac</td>
                 <td>@item.AñosExp</td>
+                <td>@item.Materia</td>
                 <td>
                     <button type="button" class="btn btn-link" @onclick="() => Modificar(item)">Modificar</button>
                     <button type="button" class="btn btn-link" @onclick="() => Eliminar(item)">Eliminar</button>
@@ -79,28 +86,30 @@ else
     private Profesor? profesorModificando;
 
     private long dni = 0;
-    private string nombre;
-    private string apellido;
+    private string nombre = "";
+    private string apellido = "";
     private DateOnly? fechaNac;
     private int añosExp;
+    private string materia = "";
 
-    private List<ComIT.CursosApp.Entities.Profesor> ProfesoresList = new();
+    private List<Profesor> ProfesoresList = new();
 
     private void Agregar()
     {
-        if(dni == 0 || nombre == "" || apellido == "" || fechaNac == null)
+        if(dni == 0 || nombre == "" || apellido == "" || fechaNac == null || materia == "")
         {
             error = "No se ingresaron todos los datos";
         }
         else
         {
-            ProfesoresList.Add(new Profesor(dni, nombre, apellido, (DateOnly)fechaNac, añosExp));
+            ProfesoresList.Add(new Profesor(dni, nombre, apellido, (DateOnly)fechaNac, añosExp, materia));
 
             dni = 0;
             nombre = "";
             apellido = "";
             fechaNac = null;
             añosExp = 0;
+            materia = "";
 
             cantProfes++;
             error = "";
@@ -117,11 +126,12 @@ else
         apellido = profeModificar.Apellido;
         fechaNac = profeModificar.FechaNac;
         añosExp = profeModificar.AñosExp;
+        materia = profeModificar.Materia;
     }
 
     private void GuardarCambios()
     {
-        if (dni == 0 || nombre == "" || apellido == "" || fechaNac == null)
+        if (dni == 0 || nombre == "" || apellido == "" || fechaNac == null || materia == "")
         {
             error = "No se ingresaron todos los datos";
         }
@@ -132,12 +142,14 @@ else
             profesorModificando.Apellido = apellido;
             profesorModificando.FechaNac = (DateOnly)fechaNac;
             profesorModificando.AñosExp = añosExp;
+            profesorModificando.Materia = materia;
 
             dni = 0;
             nombre = "";
             apellido = "";
             fechaNac = null;
             añosExp = 0;
+            materia = "";
 
             estamosModificando = false;
             profesorModificando = null;

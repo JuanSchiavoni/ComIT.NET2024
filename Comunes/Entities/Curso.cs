@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComIT.Console
+namespace ComIT.Comunes.Entities
 {
     public class Curso
     {

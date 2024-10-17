@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComIT.Console
+namespace ComIT.Comunes.Entities
 {
     public class Profesor : Persona
     {
         public int AñosExp = 0;
+        public string Materia = "";
 
-        public Profesor(long dni, string nombre, string apellido, DateOnly fechaNac, int añosExp) 
+        public Profesor(long dni, string nombre, string apellido, DateOnly fechaNac, int añosExp, string materia) 
             : base(dni, nombre, apellido,fechaNac)
         {
             AñosExp = añosExp;
+            Materia = materia;
         }
 
         public override string DevolverNombreCompleto()
