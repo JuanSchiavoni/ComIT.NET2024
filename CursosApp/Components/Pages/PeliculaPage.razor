@@ -1,0 +1,117 @@
+﻿@page "/peliculas"
+@using ComIT.CursosApp.Entities
+@rendermode InteractiveServer
+
+<h1>Peliculas que ví!</h1>
+
+<h3>Agregar una película</h3>
+
+<div>
+    <label for="nombrePelicula">Nombre de la Pelicula: </label>
+    <input type="text" @bind="nombrePeli"/>
+</div>
+<div>
+    <label for="calificacion">Calificación (1-5)</label>
+    <input type="number" @bind="calificacion" min="1" max="5"/>
+</div>
+
+@if (estamosModificando)
+{
+    <button @onclick="GuardarCambios" type="button" class="btn btn-primary">Guardar Cambios</button>
+}else
+{
+    <button @onclick="AgregarPeli" type="button" class="btn btn-primary">Agregar</button>
+}
+
+<br />
+<br />
+@if (error != "")
+{
+    <div class="alert alert-danger" role="alert">
+        <label>@error</label>
+    </div>
+}
+<br />
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Película</th>
+            <th>Calificacion</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in PeliculasList)
+        {
+            <tr>
+                <td>@item.name</td>
+                <td>@item.calif</td>
+                <td>
+                    <button type="button" class="btn btn-link" @onclick="() => Modificar(item)">Modificar</button>
+                    <button type="button" class="btn btn-link" @onclick="() => Eliminar(item)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string error = "";
+    private bool estamosModificando = false;
+    private Pelicula? pelimodi;
+
+    private string nombrePeli = "";
+    private int calificacion = 0;
+
+    private List<Pelicula> PeliculasList = new();
+
+    private void AgregarPeli()
+    {
+        if(nombrePeli == "" || calificacion == null)
+        {
+            error = "No se cargaron todos los datos";
+        }
+        else
+        {
+            PeliculasList.Add(new Pelicula(nombrePeli, calificacion));
+
+            nombrePeli = "";
+            calificacion = 0;
+        }
+    }
+
+    private void Modificar(Pelicula pelimodificar)
+    {
+        estamosModificando = true;
+        pelimodi = pelimodificar;
+
+        nombrePeli = pelimodificar.name;
+        calificacion = pelimodificar.calif;
+    }
+
+    private void GuardarCambios()
+    {
+        if (nombrePeli == "" || calificacion == null)
+        {
+            error = "No se cargaron todos los datos";
+        }
+        else
+        {
+            pelimodi.name = nombrePeli;
+            pelimodi.calif = calificacion;
+
+            nombrePeli = "";
+            calificacion = 0;
+
+            estamosModificando = false;
+            pelimodi = null;
+        }
+    }
+
+    private void Eliminar(Pelicula peliEliminiar)
+    {
+        PeliculasList.Remove(peliEliminiar);
+    }
+
+}
