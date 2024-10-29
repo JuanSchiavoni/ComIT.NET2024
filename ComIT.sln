@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComIT.Console", "ComIT.Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursosApp", "CursosApp\CursosApp.csproj", "{DF8374E8-3B39-458F-8DC0-1ACAA3074E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comunes", "Comunes\Comunes.csproj", "{AE68F599-F216-487C-B4F2-B70824756ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comunes", "Comunes\Comunes.csproj", "{AE68F599-F216-487C-B4F2-B70824756ED4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,19 @@
+﻿@page "/profesoresReporte"
+@using ComIT.Comunes.Entities
+@inject NavigationManager navigation
+@rendermode InteractiveServer
+
+<h1>Reporte de Profesores</h1>
+
+<ProfesoresListado Datos="@ProfesoresList" mostrarTitulo="false"/>
+
+<button @onclick="IrMaestro">Ir a maestro</button>
+
+@code {
+    private List<Profesor> ProfesoresList = new(); 
+
+    private void IrMaestro()
+    {
+        navigation.NavigateTo("profesor");
+    }
+}
