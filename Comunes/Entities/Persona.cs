@@ -27,6 +27,8 @@ namespace ComIT.Comunes.Entities
             }
         }
 
+        public Persona() { }
+
         public Persona(long dni, string nombre, string apellido, DateOnly fechaNac)
         {
             DNI = dni;

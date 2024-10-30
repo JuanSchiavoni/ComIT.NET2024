@@ -8,6 +8,7 @@ namespace CursosApp.Components.Pages.Profesores
     {
         private string error = "";
         private bool estamosModificando = false;
+
         private Profesor? profesorModificando;
 
         private long dni = 0;
@@ -18,29 +19,34 @@ namespace CursosApp.Components.Pages.Profesores
         private string materia = "";
         private List<Profesor> ProfesoresList = new();
 
+        private ProfesorModal modal = default;
+
         private void NuevoProfesor()
         {
-
+            profesorModificando = new Profesor();
+            modal.Open();
         }
 
-        private void Agregar()
+        private void Guardar()
         {
-            if (dni == 0 || nombre == "" || apellido == "" || fechaNac == null || materia == "")
+            if (profesorModificando.DNI == 0 || profesorModificando.Nombre == "" || profesorModificando.Apellido == "" || profesorModificando.FechaNac == null || profesorModificando.Materia == "")
             {
                 error = "No se ingresaron todos los datos";
             }
             else
             {
-                ProfesoresList.Add(new Profesor(dni, nombre, apellido, (DateOnly)fechaNac, añosExp, materia));
+                if (!estamosModificando)
+                {
+                    ProfesoresList.Add(profesorModificando);
+                }
+                else
+                {
+                    estamosModificando = false;
+                }
 
-                dni = 0;
-                nombre = "";
-                apellido = "";
-                fechaNac = null;
-                añosExp = 0;
-                materia = "";
-
+                profesorModificando = null;
                 error = "";
+                modal.Close();
             }
         }
 
@@ -49,39 +55,7 @@ namespace CursosApp.Components.Pages.Profesores
             estamosModificando = true;
             profesorModificando = profeModificar;
 
-            dni = profeModificar.DNI;
-            nombre = profeModificar.Nombre;
-            apellido = profeModificar.Apellido;
-            fechaNac = profeModificar.FechaNac;
-            añosExp = profeModificar.AñosExp;
-            materia = profeModificar.Materia;
-        }
-
-        private void GuardarCambios()
-        {
-            if (dni == 0 || nombre == "" || apellido == "" || fechaNac == null || materia == "")
-            {
-                error = "No se ingresaron todos los datos";
-            }
-            else
-            {
-                profesorModificando.DNI = dni;
-                profesorModificando.Nombre = nombre;
-                profesorModificando.Apellido = apellido;
-                profesorModificando.FechaNac = (DateOnly)fechaNac;
-                profesorModificando.AñosExp = añosExp;
-                profesorModificando.Materia = materia;
-
-                dni = 0;
-                nombre = "";
-                apellido = "";
-                fechaNac = null;
-                añosExp = 0;
-                materia = "";
-
-                estamosModificando = false;
-                profesorModificando = null;
-            }
+            modal.Open();
         }
 
         private void Eliminar(Profesor profeEliminar)

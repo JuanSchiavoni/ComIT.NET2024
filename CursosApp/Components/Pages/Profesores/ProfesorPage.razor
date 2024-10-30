@@ -7,36 +7,7 @@
 <h1>Profesor</h1>
 
 @* <h3>Nuevo profesor</h3>
-<label>DNI
-    <input type="number" @bind="dni" />
-</label>
-<br />
-<br />
-<label>Nombre
-    <input type="text" @bind="nombre"/>
-</label>
-<br />
-<br />
-<label>Apellido
-    <input type="text" @bind="apellido"/>
-</label>
-<br />
-<br />
-<label>Fecha Nacimiento
-    <input type="date" @bind="fechaNac"/>
-</label>
-<br />
-<br />
-<label>Años de Experiencia
-    <input type="number" @bind="añosExp"/>
-</label>
-<br />
-<br />
-<label>Materia
-    <input type="text" @bind="materia" />
-</label>
-<br />
-<br />
+
 
 
 @if (estamosModificando)
@@ -59,7 +30,10 @@ else
 }
 <br />
  *@
-<button class="btn-primary" @onclick="NuevoProfesor">Nuevo</button>
+
+ <ProfesorModal @ref="modal" data="profesorModificando" GuardarEventCallback="Guardar" Modificando="estamosModificando"/>
+
+<button type="button" class="btn btn-primary" @onclick="NuevoProfesor">Nuevo</button>
 
 <ProfesoresListado Datos="@ProfesoresList" MostrarBotones="true" modificarEvent="Modificar" eliminarEvent="Eliminar">
 </ProfesoresListado>

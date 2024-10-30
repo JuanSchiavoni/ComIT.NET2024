@@ -1,0 +1,75 @@
+﻿@using ComIT.Comunes.Entities
+@rendermode InteractiveServer
+
+<!-- Modal -->
+<div class="modal @StatusClass" tabindex="-1" style="display:@StyleDisplay">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">@(Modificando ? "Modificando" : "Nuevo") Profesor</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if(data != null)
+                {
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-dni" class="col-form-label">DNI:</label>
+                            <input type="number" class="form-control" id="recipient-dni" @bind="data.DNI">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-nombre" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="message-nombre" @bind="data.Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-apellido" class="col-form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="message-apellido" @bind="data.Apellido">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-fechaNac" class="col-form-label">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" id="message-fechaNac" @bind="data.FechaNac">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-añosExp" class="col-form-label">Años de Ecperiencia:</label>
+                            <input type="number" class="form-control" id="message-añosExp" @bind="data.AñosExp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-mateia" class="col-form-label">Materia:</label>
+                            <input type="text" class="form-control" id="message-materia" @bind="data.Materia">
+                        </div>
+                    </form>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="Close">Cancelar</button>
+                <button type="button" class="btn btn-primary" @onclick="() => GuardarEventCallback.InvokeAsync()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Profesor? data{ get; set; }
+    [Parameter]
+    public EventCallback GuardarEventCallback { get; set; }
+    [Parameter]
+    public bool Modificando { get; set; } = false;
+
+    private string StatusClass = "fade";
+    private string StyleDisplay = "none";
+
+    public void Open()
+    {
+        StatusClass = "show";
+        StyleDisplay = "block";
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        StatusClass = "fade";
+        StyleDisplay = "none";
+        StateHasChanged();
+    }
+}
