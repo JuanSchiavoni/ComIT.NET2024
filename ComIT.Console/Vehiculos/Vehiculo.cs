@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComIT.Console
+namespace ComIT.Console.Vehiculos
 {
     public class Vehiculo
     {
@@ -17,7 +17,7 @@ namespace ComIT.Console
         private int VelocidadActual = 0;
         protected string TipoVehiculo = "";
 
-        public Vehiculo() 
+        public Vehiculo()
         {
 
         }
@@ -28,18 +28,20 @@ namespace ComIT.Console
             {
                 Encendido = true;
                 System.Console.WriteLine($"{TipoVehiculo} está en marcha");
-            }else
+            }
+            else
             {
                 System.Console.WriteLine($"{TipoVehiculo} ya está en marcha");
             }
-            
+
         }
         public void Apagar()
-        {   
+        {
             if (Encendido)
             {
                 System.Console.WriteLine($"{TipoVehiculo} se apagó");
-            }else
+            }
+            else
             {
                 System.Console.WriteLine($"{TipoVehiculo} no esta en marcha");
             }
@@ -53,7 +55,7 @@ namespace ComIT.Console
         //dos formas distintas de hacerlo
 
         public void Acelerar(int aceleracion = 20)
-        {   
+        {
             if (Encendido)
             {
                 VelocidadActual += aceleracion;
@@ -65,8 +67,9 @@ namespace ComIT.Console
                 {
                     System.Console.WriteLine($"La nueva velocidad es {VelocidadActual}");
                 }
-               
-            }else
+
+            }
+            else
             {
                 System.Console.WriteLine($"Antes de acelerar, prender {TipoVehiculo}");
             }
@@ -79,7 +82,8 @@ namespace ComIT.Console
                 if (VelocidadActual > 0)
                 {
                     System.Console.WriteLine($"La velocidad actual es {VelocidadActual}");
-                } else
+                }
+                else
                 {
                     System.Console.WriteLine($"{TipoVehiculo} ya esta detenido");
                 }
@@ -88,7 +92,7 @@ namespace ComIT.Console
             {
                 System.Console.WriteLine($"{TipoVehiculo} esta apagado");
             }
-            
+
         }
     }
 }

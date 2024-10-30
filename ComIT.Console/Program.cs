@@ -1,5 +1,6 @@
 ﻿using ComIT.Comunes.Entities;
 using ComIT.Console;
+using ComIT.Console.OtroEspacio;
 using System;
 //CLASE 1 VS
 
@@ -540,107 +541,109 @@ using System;
 //bcle while para listar profesores y cursos(agregando los alumnos y validando que no pasen el limite del curso)
 //Muestro la lista de cursos con profesores y lista de alumnos
 
-List<Profesor> profesores = new List<Profesor>();
-List<Curso> cursos = new List<Curso>(); 
+//List<Profesor> profesores = new List<Profesor>();
+//List<Curso> cursos = new List<Curso>(); 
 
-while (true)
-{
-    Console.Write("Ingrese el DNI del profesor (0 para finalizar): ");
-    long dni = long.Parse(Console.ReadLine());
+//while (true)
+//{
+//    Console.Write("Ingrese el DNI del profesor (0 para finalizar): ");
+//    long dni = long.Parse(Console.ReadLine());
 
-    //Validación
-    if (dni == 0) {  break; }
+//    //Validación
+//    if (dni == 0) {  break; }
 
-    Console.Write("Ingrese el nombre del profesor: ");
-    string nombre = Console.ReadLine();
+//    Console.Write("Ingrese el nombre del profesor: ");
+//    string nombre = Console.ReadLine();
 
-    Console.Write("Ingrese el apellido del profesor: ");
-    string apellido = Console.ReadLine();
-
-
-    Console.Write("Fecha de nacimiento(dd/mm/aaaa): ");
-    string fecha = Console.ReadLine();
-    DateOnly fechaNac = new DateOnly(int.Parse(fecha.Substring(6, 4)), int.Parse(fecha.Substring(3, 2)), int.Parse(fecha.Substring(0, 2)));
-
-    Console.Write("Años de experiencia: ");
-    int añosExp = int.Parse(Console.ReadLine());
-
-    Console.Write("Materia que dicta: ");
-    string materia = Console.ReadLine();
-
-    Console.WriteLine("-------------------------------------------------------------------");
-
-    Profesor profesor = new Profesor (dni, nombre, apellido, fechaNac, añosExp, materia);
-    profesores.Add (profesor);
-}
+//    Console.Write("Ingrese el apellido del profesor: ");
+//    string apellido = Console.ReadLine();
 
 
-while (true)
-{
-    Console.Write("Ingrese el nombre del curso (deje vacio para finalizar): ");
-    string nombreCurso = Console.ReadLine();
+//    Console.Write("Fecha de nacimiento(dd/mm/aaaa): ");
+//    string fecha = Console.ReadLine();
+//    DateOnly fechaNac = new DateOnly(int.Parse(fecha.Substring(6, 4)), int.Parse(fecha.Substring(3, 2)), int.Parse(fecha.Substring(0, 2)));
 
-    //Validación
-    if(string.IsNullOrEmpty(nombreCurso)) { break; }
+//    Console.Write("Años de experiencia: ");
+//    int añosExp = int.Parse(Console.ReadLine());
 
-    Console.Write("Ingrese la cantidad maxima de alumnos: ");
-    int cantMaxAlu = int.Parse(Console.ReadLine());
+//    Console.Write("Materia que dicta: ");
+//    string materia = Console.ReadLine();
 
-    //asigno un profesor aleatorio al curso
-    Random ran = new Random();
-    Profesor profeAsignado = profesores[ran.Next(profesores.Count)];
+//    Console.WriteLine("-------------------------------------------------------------------");
 
-    Curso curso = new Curso(nombreCurso, cantMaxAlu, profeAsignado);
+//    Profesor profesor = new Profesor (dni, nombre, apellido, fechaNac, añosExp, materia);
+//    profesores.Add (profesor);
+//}
 
-    Console.Write("Ingrese la cantidad de alumnos que desea ingresar: ");
-    int cantAlu = int.Parse(Console.ReadLine());
 
-    if (cantAlu > cantMaxAlu)
-    {
-        Console.WriteLine($"Error: no se pueden agregar mas de {cantMaxAlu} alumnos. Podemos agregar solo el maximo permitido" );
-        cantAlu = cantMaxAlu;
-    }
+//while (true)
+//{
+//    Console.Write("Ingrese el nombre del curso (deje vacio para finalizar): ");
+//    string nombreCurso = Console.ReadLine();
 
-    for(int i = 0; i < cantAlu; i++)
-    {
-        Console.WriteLine($"Ingrese el alumno {i + 1}");
-        Console.Write("DNI: ");
-        long dni = long.Parse(Console.ReadLine());
-        Console.Write("Nombre: ");
-        string nombre = Console.ReadLine();
-        Console.Write("Apellido: ");
-        string apellido = Console.ReadLine();
+//    //Validación
+//    if(string.IsNullOrEmpty(nombreCurso)) { break; }
 
-        Console.Write("Fecha de nacimiento(dd/mm/aaaa): ");
-        string fecha = Console.ReadLine();
-        DateOnly fechaNac = new DateOnly(int.Parse(fecha.Substring(6, 4)), int.Parse(fecha.Substring(3, 2)), int.Parse(fecha.Substring(0, 2)));
+//    Console.Write("Ingrese la cantidad maxima de alumnos: ");
+//    int cantMaxAlu = int.Parse(Console.ReadLine());
 
-        Console.Write("Trabaja? (SI/NO): ");
-        bool trabaja = Console.ReadLine() == "SI";
+//    //asigno un profesor aleatorio al curso
+//    Random ran = new Random();
+//    Profesor profeAsignado = profesores[ran.Next(profesores.Count)];
+
+//    Curso curso = new Curso(nombreCurso, cantMaxAlu, profeAsignado);
+
+//    Console.Write("Ingrese la cantidad de alumnos que desea ingresar: ");
+//    int cantAlu = int.Parse(Console.ReadLine());
+
+//    if (cantAlu > cantMaxAlu)
+//    {
+//        Console.WriteLine($"Error: no se pueden agregar mas de {cantMaxAlu} alumnos. Podemos agregar solo el maximo permitido" );
+//        cantAlu = cantMaxAlu;
+//    }
+
+//    for(int i = 0; i < cantAlu; i++)
+//    {
+//        Console.WriteLine($"Ingrese el alumno {i + 1}");
+//        Console.Write("DNI: ");
+//        long dni = long.Parse(Console.ReadLine());
+//        Console.Write("Nombre: ");
+//        string nombre = Console.ReadLine();
+//        Console.Write("Apellido: ");
+//        string apellido = Console.ReadLine();
+
+//        Console.Write("Fecha de nacimiento(dd/mm/aaaa): ");
+//        string fecha = Console.ReadLine();
+//        DateOnly fechaNac = new DateOnly(int.Parse(fecha.Substring(6, 4)), int.Parse(fecha.Substring(3, 2)), int.Parse(fecha.Substring(0, 2)));
+
+//        Console.Write("Trabaja? (SI/NO): ");
+//        bool trabaja = Console.ReadLine() == "SI";
         
-        Alumno alumno = new Alumno(dni, nombre, apellido, fechaNac, trabaja);
-        curso.Alumnos.Add(alumno);
+//        Alumno alumno = new Alumno(dni, nombre, apellido, fechaNac, trabaja);
+//        curso.Alumnos.Add(alumno);
 
-        Console.WriteLine("-------------------------------------------------------------------");
+//        Console.WriteLine("-------------------------------------------------------------------");
 
-    }
+//    }
 
-    Console.WriteLine("-------------------------------------------------------------------");
+//    Console.WriteLine("-------------------------------------------------------------------");
 
-    
-    cursos.Add (curso);
-}
+//    cursos.Add (curso);
+//}
 
-Console.WriteLine("-------------------------------------------------------------------");
+//Console.WriteLine("-------------------------------------------------------------------");
 
-Console.WriteLine("Cursos Ingrsados: ");
-foreach(var curso in cursos)
-{
-    Console.WriteLine($"Cusro: {curso.Nombre}, Profesor {curso.Profesor.DevolverNombreCompleto()}");
-    Console.WriteLine("Alumnos: ");
-    foreach(var alumno in curso.Alumnos)
-    {
-        Console.WriteLine(alumno.DevolverNombreCompleto());
-    }
-    Console.WriteLine("-------------------------------------------------------------------");
-}
+//Console.WriteLine("Cursos Ingrsados: ");
+//foreach(var curso in cursos)
+//{
+//    Console.WriteLine($"Cusro: {curso.Nombre}, Profesor {curso.Profesor.DevolverNombreCompleto()}");
+//    Console.WriteLine("Alumnos: ");
+//    foreach(var alumno in curso.Alumnos)
+//    {
+//        Console.WriteLine(alumno.DevolverNombreCompleto());
+//    }
+//    Console.WriteLine("-------------------------------------------------------------------");
+//}
+
+PruebaNamespace pruebaNamespace = new();
+Namespace2 namespace2 = new();

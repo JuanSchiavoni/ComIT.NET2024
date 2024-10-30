@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComIT.Console
 {
-     public class Moto : Vehiculo
+    public class PruebaNamespace
     {
-        public Moto() 
-        {
-            CantidadDeRuedas = 2;
-            TipoVehiculo = "Moto"; 
-        }
     }
 }
