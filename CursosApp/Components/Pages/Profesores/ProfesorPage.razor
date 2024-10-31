@@ -1,35 +1,8 @@
 ﻿@page "/profesor"
-@using ComIT.Comunes.Entities
 @using ComIT.CursosApp.Entities
-@inject NavigationManager navigation
 @rendermode InteractiveServer
 
 <h1>Profesor</h1>
-
-@* <h3>Nuevo profesor</h3>
-
-
-
-@if (estamosModificando)
-{
-    <button @onclick="GuardarCambios" type="button" class="btn btn-primary">Guardar Cambios</button>
-}
-else
-{
-    <button @onclick="Agregar" type="button" class="btn btn-primary">Agregar profesor</button>
-}
-
-
-
-<br/>
-@if (error != "")
-{
-    <div class="alert alert-danger" role="alert">
-        <label>@error</label>
-    </div>
-}
-<br />
- *@
 
  <ProfesorModal @ref="modal" data="profesorModificando" GuardarEventCallback="Guardar" Modificando="estamosModificando"/>
 

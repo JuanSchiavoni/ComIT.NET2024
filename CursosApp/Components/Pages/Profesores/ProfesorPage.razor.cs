@@ -1,11 +1,14 @@
-﻿using ComIT.Comunes.Entities;
-
-
+﻿using CursosApp.Context;
+using CursosApp.Model;
+using Microsoft.AspNetCore.Components;
 
 namespace CursosApp.Components.Pages.Profesores
 {
     public partial class ProfesorPage
     {
+        [Inject]
+        private CursosAppContext context { get; set; }
+
         private string error = "";
         private bool estamosModificando = false;
 
@@ -17,7 +20,19 @@ namespace CursosApp.Components.Pages.Profesores
         private DateOnly? fechaNac;
         private int añosExp;
         private string materia = "";
-        private List<Profesor> ProfesoresList = new();
+
+        private List<Profesor> ProfesoresList;
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            GetData();
+        }
+
+        private void GetData()
+        {
+            ProfesoresList = context.Profesores.ToList();
+        }
 
         private ProfesorModal modal = default;
 
@@ -37,10 +52,16 @@ namespace CursosApp.Components.Pages.Profesores
             {
                 if (!estamosModificando)
                 {
-                    ProfesoresList.Add(profesorModificando);
+                    context.Profesores.Add(profesorModificando);
+                    context.SaveChanges();
+
+                    GetData();
                 }
                 else
                 {
+                    context.Entry(profesorModificando).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    context.SaveChanges();
+                    GetData();
                     estamosModificando = false;
                 }
 
@@ -60,7 +81,9 @@ namespace CursosApp.Components.Pages.Profesores
 
         private void Eliminar(Profesor profeEliminar)
         {
-            ProfesoresList.Remove(profeEliminar);
+            context.Profesores.Remove(profeEliminar);
+            context.SaveChanges();
+            GetData();
         }
         
     }

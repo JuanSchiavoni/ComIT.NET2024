@@ -1,6 +1,13 @@
 using CursosApp.Components;
+using CursosApp.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<CursosAppContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+});
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

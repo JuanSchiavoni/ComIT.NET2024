@@ -1,5 +1,4 @@
 ﻿@page "/profesoresReporte"
-@using ComIT.Comunes.Entities
 @inject NavigationManager navigation
 @rendermode InteractiveServer
 
@@ -7,7 +6,7 @@
 
 <ProfesoresListado Datos="@ProfesoresList" mostrarTitulo="false"/>
 
-<button @onclick="IrMaestro">Ir a maestro</button>
+<button type="button" class="btn btn-primary" @onclick="IrMaestro">Ir a maestro</button>
 
 @code {
     private List<Profesor> ProfesoresList = new(); 
